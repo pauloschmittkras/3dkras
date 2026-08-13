@@ -374,6 +374,44 @@ section {
   margin: 0;
 }
 
+.header-logo {
+  height: 80px;       /* ajuste conforme o tamanho desejado */
+  width: auto;
+  filter: none;        /* remove qualquer filtro (grayscale, brightness, opacity) herdado */
+  opacity: 1;
+}
+
+.footer-logo {
+  height: 40px; /* Adjust as needed */
+  margin-bottom: 15px;
+  filter: grayscale(100%) brightness(180%);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.footer-logo:hover {
+  filter: grayscale(0%) brightness(100%);
+  opacity: 1;
+}
+
+.social-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-links a {
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+  color: var(--accent-cool);
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 640px) {
   .main-nav { gap: 14px; }
