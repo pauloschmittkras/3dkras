@@ -73,7 +73,7 @@ img { max-width: 100%; display: block; }
   align-items: center;
   justify-content: space-between;
   padding: 20px clamp(20px, 5vw, 64px);
-  background: rgba(20, 23, 28, 0.85);
+  background: rgba(37, 6, 209, 0.85);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -87,15 +87,15 @@ img { max-width: 100%; display: block; }
 
 .logo-dot { color: var(--accent-hot); }
 
-.main-nav { display: flex; gap: clamp(16px, 3vw, 32px); }
+.main-nav { display: flex; gap: clamp(16px, 3vw, 32px); transform: translateY(-20px); }
 
 .main-nav a {
-  font-size: 0.9rem;
-  color: var(--text-dim);
+  font-size: 1.1rem;
+  color: var(--text);
   transition: color 0.15s ease;
 }
 
-.main-nav a:hover { color: var(--text); }
+.main-nav a:hover { color: var(--accent-hot); }
 
 /* ---------- Hero ---------- */
 .hero {
@@ -374,8 +374,25 @@ section {
   margin: 0;
 }
 
+header {
+  background-image: url('/imagens/banner.png');
+  background-size: cover;
+  background-position: center;
+  /* Adicione altura mínima ou espaçamento para mostrar a imagem */
+  min-height: 150px; /* Ajuste a altura como preferir */
+  display: flex;
+  align-items: center;
+}
+
+.site-header {
+  background-image: url('imagens/banner.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .header-logo {
-  height: 80px;       /* ajuste conforme o tamanho desejado */
+  height: 90px;       /* ajuste conforme o tamanho desejado */
   width: auto;
   filter: none;        /* remove qualquer filtro (grayscale, brightness, opacity) herdado */
   opacity: 1;
