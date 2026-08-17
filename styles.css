@@ -411,6 +411,11 @@ header {
   opacity: 1;
 }
 
+.social-icon {
+  width: 20px;
+  height: 20px;
+}
+
 .social-links {
   margin-top: 20px;
   display: flex;
@@ -423,6 +428,9 @@ header {
   font-family: var(--font-mono);
   font-size: 0.85rem;
   transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
 }
 
 .social-links a:hover {
