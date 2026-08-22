@@ -2,8 +2,8 @@ name: Atualizar produtos da galeria
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
-  workflow_dispatch: {}    # permite rodar manualmente pela aba Actions
+    - cron: '0 */2 * * *'   # a cada 2 horas (nos horários cheios, em UTC)
+  workflow_dispatch: {}      # permite rodar manualmente pela aba Actions
 
 jobs:
   update-products:
@@ -21,11 +21,9 @@ jobs:
           python-version: '3.11'
 
       - name: Instalar dependências
-        run: pip install pandas google-genai
+        run: pip install pandas
 
       - name: Rodar script de atualização
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python update_products.py
 
       - name: Commitar products.json (se mudou)
