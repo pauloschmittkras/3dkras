@@ -39,7 +39,7 @@ const observer = new IntersectionObserver((entries) => {
 
 progressBars.forEach((bar) => observer.observe(bar));
 
-// Carrega e exibe os produtos dinamicamente na galeria
+// Carrega e exibe os produtos dinamicamente na galeria (apenas nome e descrição)
 async function loadProducts() {
   const productGallery = document.getElementById('product-gallery');
   if (!productGallery) {
@@ -58,12 +58,9 @@ async function loadProducts() {
       article.classList.add('work-card');
 
       article.innerHTML = `
-        <div class="work-image">
-          <img src="" alt="">
-        </div>
         <div class="work-body">
-          <h3>${product.Nome}</h3>
-          <p>${product.Descricao}</p>
+          <h3>${product.name}</h3>
+          <p>${product.description}</p>
         </div>
       `;
       productGallery.appendChild(article);
