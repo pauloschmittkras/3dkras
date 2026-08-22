@@ -38,3 +38,45 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 progressBars.forEach((bar) => observer.observe(bar));
+
+// Carrega e exibe os produtos dinamicamente na galeria
+async function loadProducts() {
+  const productGallery = document.getElementById('product-gallery');
+  if (!productGallery) {
+    return; // Não está na página galeria.html
+  }
+
+  try {
+    const response = await fetch('products.json');
+    if (!response.ok) {
+      throw new Error(`Erro ao buscar products.json: ${response.statusText}`);
+    }
+    const products = await response.json();
+
+    products.forEach(product => {
+      const article = document.createElement('article');
+      article.classList.add('work-card');
+
+      article.innerHTML = `
+        <div class="work-image">
+          <img src="" alt="">
+        </div>
+        <div class="work-body">
+          <h3>${product.Nome}</h3>
+          <p>${product.Descricao}</p>
+        </div>
+      `;
+      productGallery.appendChild(article);
+    });
+  } catch (error) {
+    console.error('Falha ao carregar produtos:', error);
+  }
+}
+
+// Garante que a função loadProducts seja chamada apenas em galeria.html
+// e após o DOM ser completamente carregado.
+document.addEventListener('DOMContentLoaded', () => {
+  if (document.getElementById('product-gallery')) {
+    loadProducts();
+  }
+});
