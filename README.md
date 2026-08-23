@@ -36,3 +36,24 @@ Site estático (HTML/CSS/JS puro, sem build) para apresentar seus trabalhos em i
    ```
 
 Se quiser usar um domínio próprio, crie um arquivo `CNAME` na raiz com o domínio dentro, e configure o DNS conforme a documentação do GitHub Pages.
+
+## Como adicionar e atualizar dados de produtos
+
+Os dados dos produtos são armazenados no arquivo [`products.json`](products.json). Para adicionar novos produtos ou atualizar existentes:
+
+1.  **Edição Direta**: Abra o arquivo [`products.json`](products.json) e adicione ou modifique os objetos JSON de cada produto, seguindo o formato existente.
+2.  **Via Google Sheets e GitHub Actions**: 
+    *   Mantenha seus dados de produtos em uma planilha Google Sheets.
+    *   O script [`update_products.py`](update_products.py) é responsável por ler os dados da planilha e gerar o [`products.json`](products.json) atualizado.
+    *   Este processo é automatizado via GitHub Actions. Sempre que você fizer um push para a branch principal (ou outra configurada), a Action será executada, baixará os dados da planilha e atualizará o [`products.json`](products.json) no repositório. Certifique-se de que a Action esteja configurada corretamente para acessar sua planilha do Google Drive.
+
+## Como executar localmente com dados do Google Drive
+
+Para testar o site localmente com os dados mais recentes do Google Drive:
+
+1.  **Garanta a Atualização**: Certifique-se de que o [`products.json`](products.json) local está atualizado com os dados do Google Drive. Você pode executar o script [`update_products.py`](update_products.py) manualmente (se tiver as credenciais configuradas) ou fazer um pull do repositório após a GitHub Action ter sido executada.
+2.  **Iniciar Servidor HTTP**: Abra o terminal na raiz do projeto e execute o seguinte comando:
+    ```bash
+    python -m http.server 8000
+    ```
+3.  **Acessar no Navegador**: Abra seu navegador e navegue para `http://localhost:8000`. O site será carregado, e os produtos de `products.json` serão exibidos.

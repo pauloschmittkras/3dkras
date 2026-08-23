@@ -56,12 +56,22 @@ async function loadProducts() {
     products.forEach(product => {
       const article = document.createElement('article');
       article.classList.add('work-card');
-
+      const imagesHtml = product.images.map(src => 
+        `<img src="${src}" alt="${product.name}" loading="lazy">`
+      ).join('');
       article.innerHTML = `
+        <div class="work-images">${imagesHtml}</div>
         <div class="work-body">
           <h3>${product.name}</h3>
           <p>${product.description}</p>
         </div>
+        <div class="work-stats mono">
+          <span>${product.detail}</span>
+        </div>
+        <div class="print-progress" aria-hidden="true">
+          <div class="print-progress-bar" data-progress="100"></div>
+        </div>
+        <span class="print-progress-label mono">100% concluído</span>
       `;
       productGallery.appendChild(article);
     });
