@@ -132,7 +132,15 @@ img { max-width: 100%; display: block; }
 }
 
 @keyframes blink {
+  30% { opacity: 0; }
+}
+
+@keyframes blink-1-5s {
   50% { opacity: 0; }
+}
+
+.blinking-text-1-5s {
+  animation: blink-1-5s 2.0s steps(1) infinite;
 }
 
 .hero-sub {
@@ -260,12 +268,16 @@ section {
   border-radius: 3px;
 }
 
-.work-body { 
-  padding: 20px; 
-  display: flex; 
-  flex-direction: column; 
-  gap: 10px; 
-  flex: 1; 
+.work-images {
+  text-align: center; /* Centraliza as imagens dentro da div */
+}
+
+.work-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
 }
 
 .work-body h3 { 
