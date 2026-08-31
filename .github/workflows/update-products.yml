@@ -2,7 +2,7 @@ name: Atualizar produtos da galeria
 
 on:
   schedule:
-    - cron: '0 */2 * * *'   # a cada 2 horas (nos horários cheios, em UTC)
+    - cron: '0 */4 * * *'   # a cada 2 horas (nos horários cheios, em UTC)
   workflow_dispatch: {}      # permite rodar manualmente pela aba Actions
 
 jobs:
