@@ -64,5 +64,14 @@
     "description": "Produto incluido no dia 25/08 as 9:27.",
     "detail": "PLA 2:40h ",
     "images": []
+  },
+  {
+    "name": "Dragão articulado",
+    "description": "Produto incluido no dia 31/08 as 16:27. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "detail": "PETG 3h de impressão 11 cm",
+    "images": [
+      "https://i.ibb.co/20bKKcws/dragao-articulado.png",
+      "https://i.ibb.co/20bKKcws/dragao-articulado.png"
+    ]
   }
 ]
