@@ -57,3 +57,7 @@ Para testar o site localmente com os dados mais recentes do Google Drive:
     python -m http.server 8000
     ```
 3.  **Acessar no Navegador**: Abra seu navegador e navegue para `http://localhost:8000`. O site será carregado, e os produtos de `products.json` serão exibidos.
+
+## Site
+
+* https://pauloschmittkras.github.io/3dkras/
